@@ -1,0 +1,191 @@
+.budgets-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.budgets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.budgets-header h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.budgets-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.budgets-period-picker {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.period-select {
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+}
+
+.budget-summary-card {
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(76, 175, 80, 0.05) 100%);
+  border: 1px solid rgba(108, 99, 255, 0.15);
+}
+
+.budget-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.budget-summary-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.budget-summary-stat .stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.budget-summary-stat .stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.overall-progress-bar {
+  height: 8px;
+  background: var(--border-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.overall-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+/* Budgets Grid */
+.budgets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.budget-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.budget-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.budget-category-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.budget-category-icon {
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.budget-category-name {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.budget-period {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.budget-card-actions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.budget-amounts-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+}
+
+.budget-sub-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.budget-spent-val {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.budget-limit-val {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.budget-progress-track {
+  width: 100%;
+  height: 8px;
+  background: var(--border-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.budget-status-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.budget-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+

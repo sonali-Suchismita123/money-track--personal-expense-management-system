@@ -1,0 +1,32 @@
+.spinner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+}
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--primary-bg) var(--primary-bg) var(--primary) var(--primary);
+  animation: spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+.spinner--sm { width: 18px; height: 18px; border-width: 2px; }
+.spinner--md { width: 36px; height: 36px; border-width: 3px; }
+.spinner--lg { width: 56px; height: 56px; border-width: 4px; }
+
+.spinner--inline {
+  vertical-align: middle;
+}
+
+.spinner-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin: 0;
+}

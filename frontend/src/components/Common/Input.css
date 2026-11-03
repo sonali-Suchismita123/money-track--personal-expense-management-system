@@ -1,0 +1,103 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.input-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: #FAFAFA;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  outline: none;
+  appearance: none;
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.input-field:focus {
+  background: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+}
+
+.input-field:disabled {
+  background: var(--border-light);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* With icons */
+.input-field--with-left-icon  { padding-left: 40px; }
+.input-field--with-right-icon { padding-right: 40px; }
+
+/* Textarea */
+.input-field--textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.6;
+}
+
+/* Select */
+.input-field--select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* Icons */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+  line-height: 1;
+}
+.input-icon--left  { left: 12px; }
+.input-icon--right { right: 12px; }
+
+/* Error state */
+.input-group--error .input-field {
+  border-color: var(--danger);
+  background: rgba(244, 67, 54, 0.02);
+}
+.input-group--error .input-field:focus {
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.12);
+}
+
+.input-error {
+  font-size: 12px;
+  color: var(--danger);
+  font-weight: 500;
+}
+
+.input-helper {
+  font-size: 12px;
+  color: var(--text-muted);
+}
