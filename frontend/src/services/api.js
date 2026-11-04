@@ -5,8 +5,8 @@
  */
 
 const hostname = (typeof window !== 'undefined' && window.location.hostname) ? window.location.hostname : 'localhost';
-const isPort5000 = (typeof window !== 'undefined' && window.location.port === '5000');
-const BASE_URL = isPort5000 ? '' : `http://${hostname}:5000`;
+const isDevFrontend = (typeof window !== 'undefined' && window.location.port === '3000');
+const BASE_URL = isDevFrontend ? `http://${hostname}:5001` : '';
 
 /**
  * Core fetch wrapper.

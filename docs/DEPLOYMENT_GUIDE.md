@@ -97,3 +97,26 @@ npm run build
 ```
 This generates optimized static files in `frontend/build/` which can be served via Nginx or Cloudflare Pages.
 
+### 5.3 One-Click Vercel Deployment (Monorepo Serverless)
+
+MoneyTrack is pre-configured for full-stack deployment on **Vercel**:
+- **Backend API**: Deployed as Python Serverless Functions via `@vercel/python` (`api/index.py`).
+- **Frontend SPA**: Built and deployed via `@vercel/static-build` from `frontend/package.json`.
+- **Database**: Connects seamlessly over SSL to your **Neon Serverless PostgreSQL** database.
+
+#### Deployment Steps:
+1. Push your repository to GitHub:
+   ```bash
+   git push origin main
+   ```
+2. Log in to [Vercel Dashboard](https://vercel.com) and click **"Add New..." -> "Project"**.
+3. Import your GitHub repository: `money-track--personal-expense-management-system`.
+4. Keep the default settings (Vercel automatically detects `vercel.json`).
+5. In **Environment Variables**, add:
+   - `DATABASE_URL`: Your Neon PostgreSQL connection string (from `.env` or Neon console).
+   - `SECRET_KEY`: A secure random secret key (e.g. `moneytrack-secret-prod-2026`).
+   - `FLASK_ENV`: `production`
+6. Click **Deploy**.
+7. Vercel will build the frontend, package the Python serverless function, and assign your public production URL (e.g. `https://your-project.vercel.app`).
+
+

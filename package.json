@@ -1,0 +1,8 @@
+{
+  "name": "moneytrack",
+  "version": "1.0.0",
+  "description": "MoneyTrack - Personal Expense & Budget Management System",
+  "scripts": {
+    "build": "npm --prefix frontend run build"
+  }
+}

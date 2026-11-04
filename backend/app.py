@@ -50,6 +50,10 @@ def create_app(config_class=Config):
                 "http://127.0.0.1:3000",
                 "http://localhost:3001",
                 "http://127.0.0.1:3001",
+                "http://localhost:5000",
+                "http://127.0.0.1:5000",
+                "http://localhost:5001",
+                "http://127.0.0.1:5001",
             ]
         }},
         supports_credentials=True,   # required so cookies are sent cross-origin
@@ -96,8 +100,11 @@ def create_app(config_class=Config):
     # Database initialisation and seeding
     # ------------------------------------------------------------------ #
     with app.app_context():
-        db.create_all()        # Create all tables (idempotent — won't drop existing data)
-        _seed_default_categories()
+        try:
+            db.create_all()        # Create all tables (idempotent — won't drop existing data)
+            _seed_default_categories()
+        except Exception as e:
+            app.logger.warning(f"Database auto-init note: {e}")
 
     # ------------------------------------------------------------------ #
     # Global error handlers — always return JSON
@@ -206,6 +213,6 @@ def _seed_default_categories():
 app = create_app()
 
 if __name__ == "__main__":
-    # debug=True enables the interactive debugger and auto-reloader.
-    # NEVER use debug=True in production.
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5001))
+    print(f"MoneyTrack running at http://localhost:{port} and http://127.0.0.1:{port}")
+    app.run(debug=False, host="0.0.0.0", port=port)
